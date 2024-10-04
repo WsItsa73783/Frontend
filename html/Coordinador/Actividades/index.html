@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Actividades</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
+
+     <!-- Custom styles for this page -->
+     <link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Coordinador</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="../../Coordinador/dashboard.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Interfaz
+            </div>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="../../Coordinador/Actividades/index.html">
+                    <i class="fas fa-tasks"></i>
+                    <span>Gestión de Actividades</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="../../Coordinador/Reuniones/index.html">
+                    <i class="fas fa-handshake"></i>
+                    <span>Gestión de Reuniones</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="../../Coordinador/Reportes/index.html">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Gestión de Reportes</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <!-- <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Pages</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Login Screens:</h6>
+                        <a class="collapse-item" href="login.html">Login</a>
+                        <a class="collapse-item" href="register.html">Register</a>
+                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Other Pages:</h6>
+                        <a class="collapse-item" href="404.html">404 Page</a>
+                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                    </div>
+                </div>
+            </li> -->
+
+            <!-- Nav Item - Parameters -->
+            
+            
+        </ul>
+        <!-- End of Sidebar -->
+    </ul>
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <top-navbar-component></top-navbar-component>
+
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#createActivityModal">
+                            <i class="fas fa-plus fa-sm text-white-50"></i> Registrar Actividad
+                        </button>
+                    </div>
+
+
+                    <div class="modal fade" id="createActivityModal" tabindex="-1" role="dialog" aria-labelledby="createActivityModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="createActivityModalLabel">Crear Actividad</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="create-activity-form">
+                                        <div class="form-group">
+                                            <label for="activity-title">Título</label>
+                                            <input type="text" class="form-control" id="activity-title" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="activity-description">Descripción</label>
+                                            <textarea class="form-control" id="activity-description" required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="activity-start-date">Fecha de Inicio</label>
+                                            <input type="datetime-local" class="form-control" id="activity-start-date" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="activity-end-date">Fecha de Fin</label>
+                                            <input type="datetime-local" class="form-control" id="activity-end-date" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="create-school">Colegio</label>
+                                            <select class="form-control" id="create-school" required>
+                                            </select>
+                                        </div>                                        
+                                        <div class="form-group">
+                                            <label for="create-state">Estado</label>
+                                            <select class="form-control" id="create-state" required>
+                                            </select>
+                                        </div>
+                                        <button type="button" class="btn btn-primary" onclick="createActivity()">Crear</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Listado de Colegios</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="activities-table" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                                    <th>Título</th>
+                                                    <th>Descripción</th>
+                                                    <th>Fecha de Inicio</th>
+                                                    <th>Fecha de Fin</th>
+                                                    <th>Colegio</th>
+                                                    <th>Estado</th>
+                                                    <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+            
+
+                    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="updateModalLabel">Editar Actividad</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="update-activity-form">
+                                        <div class="form-group">
+                                            <label for="update-activity-title">Título</label>
+                                            <input type="text" class="form-control" id="update-activity-title" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="update-activity-description">Descripción</label>
+                                            <textarea class="form-control" id="update-activity-description" required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="update-activity-start-date">Fecha de Inicio</label>
+                                            <input type="datetime-local" class="form-control" id="update-activity-start-date" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="update-activity-end-date">Fecha de Fin</label>
+                                            <input type="datetime-local" class="form-control" id="update-activity-end-date" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="update-school">Colegio</label>
+                                            <select class="form-control" id="update-school" required></select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="update-state">Estado</label>
+                                            <select class="form-control" id="update-state" required></select>
+                                        </div>
+                                        <input type="hidden" id="update-activity-id">
+                                        <button type="button" class="btn btn-primary" onclick="updateActivity()">Actualizar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Delete Activity Modal -->
+                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteModalLabel">Eliminar Actividad</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>¿Está seguro de que desea eliminar esta actividad?</p>
+                                    
+                                <input type="hidden" id="delete-activity-id">
+                                    <button type="button" class="btn btn-danger" onclick="deleteActivity()">Eliminar</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer-component></footer-component>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="../../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+            <!-- Page level plugins -->
+            <script src="../../../vendor/datatables/jquery.dataTables.min.js"></script>
+            <script src="../../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        
+            <!-- Page level custom scripts -->
+            <script src="../../../js/demo/datatables-demo.js"></script>
+    
+
+    <!-- Custom scripts for all pages-->
+    <script src="../../../js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="../../../vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="../.././js/demo/chart-area-demo.js"></script>
+    <script src="../../../js/demo/chart-pie-demo.js"></script>
+
+    <script src="../../../js/activities.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../../js/tokenPages.js"></script>
+
+    <script src="../../../components/nav-component/nav-component.js"></script>
+    <script src="../../../components/footer-component/footer-component.js"></script>
+    <script src="../../../components/top-navbar-component/top-navbar-component.js"></script>
+    <script src="../../../components/brand-component/brand-component.js"></script>
+</body>
+
+</html>

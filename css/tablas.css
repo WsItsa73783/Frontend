@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-part {
+    flex: 1; /* Ocupa el mismo espacio en el header */
+    text-align: center; /* Centra el texto dentro de cada parte */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.part-1 { background-color: #e9ecef; }
+.part-2 { background-color: #f1f3f5; }
+.par
+.part-3 { background-color: #e9ecef; }
+.part-4 { background-color: #f1f3f5; }
+
+/* Estilos para la tabla y las gráficas */
+.table-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    max-width: 900px; /* Ajusta el tamaño máximo de la tabla */
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle; /* Centra verticalmente los canvas */
+}
+
+canvas {
+    width: 50% !important; /* Ajusta el tamaño al contenedor */
+    height: 200px !important; /* Ajusta la altura de las gráficas */
+}

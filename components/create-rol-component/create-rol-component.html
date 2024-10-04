@@ -1,0 +1,41 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm ml-auto" data-toggle="modal" data-target="#registerRoleModal">
+        <i class="fas fa-download fa-sm text-white-50"></i> Ingresar Rol
+    </button>
+</div>
+
+<!-- Register Role Modal -->
+<div class="modal fade" id="registerRoleModal" tabindex="-1" role="dialog" aria-labelledby="registerRoleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerRoleModalLabel">Registrar Nuevo Rol</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="register-role-form">
+                    <div class="form-group">
+                        <label for="role-name">Nombre</label>
+                        <input type="text" class="form-control" id="role-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role-state">Estado</label>
+                        <select class="form-control" id="state" required disabled>
+                            <option value="1" selected>Activo</option>
+                            <option value="0">Inactivo</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Asigne los módulos</label>
+                        <div id="modules-list" class="form-check">                           
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="register-role-button">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
